@@ -32,12 +32,7 @@ class ShipmentOutMixin(object):
     def search_sale_references(cls, name, clause):
         pool = Pool()
         Sale = pool.get('sale.sale')
-        keyword = clause[2].replace('%', '').replace(' ', '')
-        if not keyword:
-            return [('id', 'in', [s.id for s in cls.search([])])]
-
-        references = list(set(keyword.split(',')))
-        sales = Sale.search([('reference', 'in', references)])
+        sales = Sale.search([('reference', clause[1], clause[2])])
         field = cls.__sale_references_field_factory()
         if not hasattr(Sale, field):
             return []
