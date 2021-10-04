@@ -9,7 +9,7 @@ __all__ = ['ShipmentOut', 'ShipmentOutReturn']
 
 
 class ShipmentOutMixin(object):
-
+    __slots__ = ()
     sale_references = fields.Function(fields.Char('Sale References'),
         'get_sale_references', searcher='search_sale_references')
 
