@@ -4,8 +4,8 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:stock.shipment.out,sale_references:"
 msgid "Sale References"
-msgstr "Referència de les Ventes"
+msgstr "Referència de les vendes"
 
 msgctxt "field:stock.shipment.out.return,sale_references:"
 msgid "Sale References"
-msgstr "Referència de les Ventes"
+msgstr "Referència de les vendes"
