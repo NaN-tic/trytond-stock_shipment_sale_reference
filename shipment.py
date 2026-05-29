@@ -36,7 +36,7 @@ class ShipmentOutMixin(object):
         field = cls.__sale_references_field_factory()
         if not hasattr(Sale, field):
             return []
-        shipments = [eval('s.%s' % field) for s in sales]
+        shipments = [getattr(s, field) for s in sales]
         return [('id', 'in', [s.id for s in chain(*shipments) if s.__name__ ==
                     cls.__name__])]
 
